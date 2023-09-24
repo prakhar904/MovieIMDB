@@ -34,36 +34,6 @@ class MovieTableViewCell: UITableViewCell {
     //MARK: - Views
     
     
-    private lazy var headerStackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .horizontal
-        view.spacing = 10
-        return view
-    }()
-    
-    private lazy var profileImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
-        image.image = UIImage(named: "venom-7.jpg")
-        return image
-    }()
-    
-    private lazy var profileName: UIButton = {
-        let button = UIButton(type: .system)
-        button.isUserInteractionEnabled = true
-        button.setTitle("venom", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.textAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-        
-    }()
-    
-    
     private lazy var thumbnailImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -145,9 +115,6 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints(){
-        
-        
-        // Post Image Set Up according to image aspect ratio
         let size = thumbnailImageView.image?.size
         let ratio = (size?.height ?? 1)/(size?.width ?? 1)
         

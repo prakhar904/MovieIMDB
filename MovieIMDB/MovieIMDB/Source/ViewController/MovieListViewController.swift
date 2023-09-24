@@ -81,11 +81,20 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource{
 
 extension MovieListViewController: MovieDelegate{
     func playListButtonClicked() {
-        showPlaylistSheet()
+        showPlaylistAlert()
     }
     
-    private func showPlaylistSheet() {
-        
+    private func showPlaylistAlert() {
+        let alertController = UIAlertController(
+            title: "Playlist",
+            message: "This is a placeholder message for the Playlist button.",
+            preferredStyle: .alert
+        )
+
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+
+        present(alertController, animated: true, completion: nil)
     }
     
     
