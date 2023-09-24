@@ -7,10 +7,9 @@
 
 import Foundation
 import CoreData
-import UIKit
 
 class PlaylistViewModel {
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = CoredataContainer.shared.persistentContainer.viewContext
 
     // Fetch existing playlists
     func fetchPlaylists() -> [Playlist] {

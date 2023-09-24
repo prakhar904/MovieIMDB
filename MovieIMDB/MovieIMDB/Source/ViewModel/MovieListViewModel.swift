@@ -7,12 +7,11 @@
 
 import Foundation
 import CoreData
-import UIKit
 
 class MovieListViewModel {
     private let movieService = MovieService()
     private var movies: [MovieModel] = []
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = CoredataContainer.shared.persistentContainer.viewContext
 
     
     var numberOfMovies: Int {

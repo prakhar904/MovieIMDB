@@ -96,6 +96,4 @@ extension MovieListViewController: MovieDelegate{
 
         present(alertController, animated: true, completion: nil)
     }
-    
-    
 }

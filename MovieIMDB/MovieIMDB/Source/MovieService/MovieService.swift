@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol Service{
     func fetchPopularMovies(completion: @escaping ([MovieModel]?) -> Void)
@@ -52,7 +51,7 @@ class MovieService: Service {
     }
     
     func saveMoviesToCoreData(_ movies: [MovieModel]) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoredataContainer.shared.persistentContainer.viewContext
         
         for movie in movies {
             let movieManagedObject = Movie(context: context)

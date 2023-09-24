@@ -4,10 +4,10 @@
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="toPlaylist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Playlist"/>
+        <relationship name="toPlaylist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Playlist" inverseName="toMovie" inverseEntity="Playlist"/>
     </entity>
     <entity name="Playlist" representedClassName="Playlist" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="toMovie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Movie"/>
+        <relationship name="toMovie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Movie" inverseName="toPlaylist" inverseEntity="Movie"/>
     </entity>
 </model>
